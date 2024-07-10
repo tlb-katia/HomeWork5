@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa9dae4-a678-40a5-a0c5-d01fb886dc47" name="Changes" comment="" />
+    <list default="true" id="faa9dae4-a678-40a5-a0c5-d01fb886dc47" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +22,11 @@
   </component>
   <component name="GOROOT" url="file://$USER_HOME$/goproject/go1.21.0" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -42,7 +50,7 @@
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "hw5",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "/home/katia/GolandProjects/HomeWork5",
     "node.js.detected.package.eslint": "true",
@@ -92,6 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.build" />
+        <item itemvalue="Go Build.go build HomeWork5/server/cmd" />
         <item itemvalue="Go Build.go build HomeWork5/cmd/server" />
         <item itemvalue="Makefile Target.build" />
         <item itemvalue="Go Build.go build HomeWork5/server/cmd" />
