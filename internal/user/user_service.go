@@ -3,8 +3,9 @@ package user
 import (
 	"HomeWork5/util"
 	"context"
-	"errors"
+	"fmt"
 	"github.com/golang-jwt/jwt/v5"
+	"os"
 	"strconv"
 	"time"
 )
@@ -22,12 +23,14 @@ func NewService(r Repository) Service {
 }
 
 func (s *service) CreateUser(c context.Context, user *UserReq) (*UserRes, error) {
+	const op = "user,.CreateUser"
+
 	ctx, cancel := context.WithTimeout(c, s.timeout)
 	defer cancel()
 
 	hashedPassword, err := util.HashPassword(user.Password)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("%s: %w", op, err)
 	}
 
 	u := User{
@@ -38,33 +41,36 @@ func (s *service) CreateUser(c context.Context, user *UserReq) (*UserRes, error)
 
 	r, err := s.Repository.CreateUser(ctx, &u)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("%s: %w", op, err)
 	}
 
 	return &UserRes{
 		strconv.FormatInt(r.ID, 10),
 		r.Username,
 		r.Email,
+		"user was successfully created",
 	}, nil
 }
 
 func (s *service) Login(c context.Context, user *UserReq) (*LoginUser, error) {
+	const op = "user.Login"
+
 	ctx, cancel := context.WithTimeout(c, s.timeout)
 	defer cancel()
 
 	dbUser, err := s.Repository.GetUserByEmail(ctx, user.Email)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("%s: %w", op, err)
 	}
 
 	flag := util.CheckPasswordHash(user.Password, dbUser.Password)
 	if !flag {
-		return nil, errors.New("invalid password")
+		return nil, fmt.Errorf("%s: %w", op, err)
 	}
 
 	token, err := NewToken(*dbUser)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("%s: %w", op, err)
 	}
 
 	return &LoginUser{
@@ -74,9 +80,9 @@ func (s *service) Login(c context.Context, user *UserReq) (*LoginUser, error) {
 	}, nil
 }
 
-// TODO: what is JWT
-
 func NewToken(user User) (string, error) {
+	const op = "user.NewToken"
+
 	token := jwt.New(jwt.SigningMethodHS256)
 
 	claims := token.Claims.(jwt.MapClaims)
@@ -85,11 +91,10 @@ func NewToken(user User) (string, error) {
 	claims["uemail"] = user.Email
 	claims["exp"] = time.Now().Add(24 * time.Hour)
 
-	//TODO change secret place
-
-	tokenString, err := token.SignedString([]byte("secret"))
+	tokenString, err := token.SignedString([]byte(os.Getenv("SECRET")))
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("%s: %w", op, err)
 	}
+
 	return tokenString, nil
 }

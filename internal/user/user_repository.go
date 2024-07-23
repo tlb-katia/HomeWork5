@@ -37,11 +37,13 @@ func (r *repository) CreateUser(ctx context.Context, user *User) (*User, error) 
 	return user, nil
 }
 
+//TODO как правильно писать запросы
+
 func (r *repository) GetUserByEmail(ctx context.Context, email string) (*User, error) {
 	const op = "user.Repository.GetUserByEmail"
 	u := User{}
 
-	query := "SELECT id, email, encrypted_password, created_at FROM users WHERE email = ?"
+	query := "SELECT id, email, encrypted_password, created_at FROM users WHERE email = $1"
 	err := r.db.QueryRowContext(ctx, query, email).Scan(&u.ID, &u.Email, &u.Username, &u.Password)
 	if err != nil {
 		return nil, fmt.Errorf("%w: %s", err, op)

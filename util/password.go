@@ -19,7 +19,3 @@ func CheckPasswordHash(password, hash string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 	return err == nil
 }
-
-//func ParseToken(value string) (claims *models.Claims, err error) {
-//
-//}
