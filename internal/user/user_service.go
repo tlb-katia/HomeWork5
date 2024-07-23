@@ -65,7 +65,7 @@ func (s *service) Login(c context.Context, user *UserReq) (*LoginUser, error) {
 
 	flag := util.CheckPasswordHash(user.Password, dbUser.Password)
 	if !flag {
-		return nil, fmt.Errorf("%s: %w", op, err)
+		return nil, fmt.Errorf("%s: %w", op, "password is not correct")
 	}
 
 	token, err := NewToken(*dbUser)

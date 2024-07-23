@@ -37,8 +37,6 @@ func (r *repository) CreateUser(ctx context.Context, user *User) (*User, error) 
 	return user, nil
 }
 
-//TODO как правильно писать запросы
-
 func (r *repository) GetUserByEmail(ctx context.Context, email string) (*User, error) {
 	const op = "user.Repository.GetUserByEmail"
 	u := User{}

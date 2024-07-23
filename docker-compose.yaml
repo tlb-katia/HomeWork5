@@ -8,4 +8,5 @@ services:
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=admin
+      - POSTGRES_DB=postgres
     image: postgres:14.3-alpine

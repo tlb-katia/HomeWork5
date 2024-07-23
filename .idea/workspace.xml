@@ -4,24 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa9dae4-a678-40a5-a0c5-d01fb886dc47" name="Changes" comment="123">
+    <list default="true" id="faa9dae4-a678-40a5-a0c5-d01fb886dc47" name="Changes" comment="fix: fixed swagger params">
       <change afterPath="$PROJECT_DIR$/MySpec.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/middleware/middleware.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/user/user_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/user_handler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/user/user_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/user_repository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/user/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/user/user_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/ws/hub.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/ws/hub.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/ws/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/ws/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/ws/ws_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/ws/ws_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/password.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/password.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +125,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="fix: fixed swagger params" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fixed swagger params" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
